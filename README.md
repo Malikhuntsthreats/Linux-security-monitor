@@ -1,96 +1,128 @@
-🛡️ Linux Security Monitor
+# Linux Security Monitor
+A lightweight Linux security automation tool that detects suspicious system changes in real time.  
+Built with Python and designed for hands-on SOC and Incident Response learning.
 
-A lightweight security automation script built on Ubuntu that detects suspicious system activity in real time without requiring a SIEM or SOAR platform.
+---
 
-This project watches critical Linux files and logs such as:
+## 🔥 Overview
+This project continuously monitors critical Linux files for unauthorized modifications such as:
 
-/etc/passwd → new users added or removed
+- New user accounts being added
+- Privilege escalation (user added to sudo group)
+- Cron job modifications
+- System configuration changes
 
-/etc/group → privilege / sudo modifications
-
-/etc/crontab → unauthorized scheduled tasks
-
-Whenever a suspicious change is detected, the monitor:
-
-✔ Logs it to /var/log/linux_security_monitor.log
-✔ Prints a timestamped alert to the console
-✔ Helps simulate real IR & detection engineering workflows
-
-🚀 Features
-
-Real-time file integrity monitoring
-
-Detection of new user accounts
-
-Detection of privilege escalation
-
-Cron job monitoring
-
-Alert logging
-
-Simple Python design for learning IR automation
-
-🧠 Skills Demonstrated
-
-Detection engineering
-
-Incident response logic
-
-Security automation
-
-Real Linux IR concepts
-
-File integrity monitoring
-
-Python scripting
-
-System monitoring
-
-Perfect for:
-
-SOC Analyst resume
-
-IR portfolio
-
-Job applications
-
-LinkedIn posts
-
-GitHub experience
-
-📂 How to Run
-sudo python3 linux_security_monitor.py
-
-
-Alerts will appear in:
+Every detection is logged to:
 
 /var/log/linux_security_monitor.log
 
-📬 Optional: Send Alerts to Discord or Email
+and printed live in the terminal.
 
-You can add a Discord webhook inside the alert() function:
+---
 
-import requests
+## ⚙️ Features
+- ✔ Real-time file integrity monitoring  
+- ✔ Detects new users added  
+- ✔ Detects privilege escalation  
+- ✔ Detects cron file changes  
+- ✔ Custom alert logging  
+- ✔ Optional Discord or Email alerting  
 
-WEBHOOK_URL = "YOUR_WEBHOOK_HERE"
+---
 
-def alert(message):
-    ts = time.strftime("%Y-%m-%d %H:%M:%S")
-    line = f"[{ts}] {message}"
-    print(line)
+## 📁 Files Monitored
+- **/etc/passwd** – user accounts  
+- **/etc/group** – groups / sudo  
+- **/etc/crontab** – system-wide cron jobs  
 
-    requests.post(WEBHOOK_URL, json={"content": line})
+---
 
+**Monitor Running:**  
+![](images/monitor_running.png)
 
-Or you can use smtplib for email alerts (I can add that for you too).
+**User Added Detected:**  
+![](images/user_added.png)
 
-📜 License
+**Cron Change Detected:**  
+![](images/cron_detected.png)
 
-MIT License.
+---
 
-🖊️ Author
+## 🧠 Skills Demonstrated
+- Detection engineering  
+- IR automation  
+- SOC alert triage thinking  
+- Linux file integrity monitoring  
+- Python scripting  
+- Log analysis  
 
+---
+
+## 🚀 How to Run
+
+Make script executable:
+```bash
+sudo chmod +x linux_security_monitor.py
+
+and printed live in the terminal.
+
+---
+
+## ⚙️ Features
+- ✔ Real-time file integrity monitoring  
+- ✔ Detects new users added  
+- ✔ Detects privilege escalation  
+- ✔ Detects cron file changes  
+- ✔ Custom alert logging  
+- ✔ Optional Discord or Email alerting  
+
+---
+
+## 📁 Files Monitored
+- **/etc/passwd** – user accounts  
+- **/etc/group** – groups / sudo  
+- **/etc/crontab** – system-wide cron jobs  
+
+---
+
+## 📸 Screenshots
+
+**Monitor Running:**  
+![](images/monitor_running.png)
+
+**User Added Detected:**  
+![](images/user_added.png)
+
+**Cron Change Detected:**  
+![](images/cron_detected.png)
+
+---
+
+## 🧠 Skills Demonstrated
+- Detection engineering  
+- IR automation  
+- SOC alert triage thinking  
+- Linux file integrity monitoring  
+- Python scripting  
+- Log analysis  
+
+---
+
+## 🚀 How to Run
+
+Make script executable:
+```bash
+sudo chmod +x linux_security_monitor.py
+sudo python3 linux_security_monitor.py
+import smtplib
+
+def email_alert(message):
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login("YOUR_EMAIL", "YOUR_APP_PASSWORD")
+    server.sendmail("YOUR_EMAIL", "RECIPIENT_EMAIL", message)
+    server.quit()
+
+👤 Author
 Malik Lewis
-Security Analyst • Detection Engineering • IR Automation
-
-⭐ If you like this project, star the repo!
+Cybersecurity | SOC | Detection Engineering
