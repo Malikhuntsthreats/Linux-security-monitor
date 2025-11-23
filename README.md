@@ -48,6 +48,68 @@ and printed live in the terminal.
 
 ---
 
+📸 Screenshots
+
+1️⃣ Creating the Project Directory
+
+Created /opt/security-labs using mkdir.
+
+![]([![](image/VirtualBox_Security2_#1.png90)
+
+2️⃣ Opening the Script with Nano
+
+Used sudo nano to create and edit the automation script.
+
+![](image/VirtualBox_Security2_#2.png)
+
+3️⃣ Adding the Python Detection Code
+
+Pasted the full monitoring code into the nano editor.
+
+![](image/VirtualBox_Security2_#3.png)
+
+4️⃣ Activating Script Permissions
+
+Applied sudo chmod to make the script executable.
+
+![](image/VirtualBox_Security2_#4.png)
+
+5️⃣ Running the Monitoring Script
+
+Executed the script using sudo python3.
+
+![](image/VirtualBox_Security2_#5.png)
+
+6️⃣ Script Monitoring Loop Active (Overview of Code)
+
+The script begins watching key system files and shows baseline + monitoring loop.
+
+![](image/VirtualBox_Security2_#7.png)
+
+7️⃣ Initial Monitoring Output
+
+Real-time alerts appear as the script detects system changes.
+
+![](image/VirtualBox_Security2_#9.png)
+
+8️⃣ Adding a New Test User
+
+Used sudo adduser test124 to simulate suspicious system activity.
+
+![](image/VirtualBox_Security2_#10.png)
+
+9️⃣ New User Successfully Added
+
+Ubuntu confirms creation of the new user.
+
+![](image/VirtualBox_Security2_#11.png)
+
+🔟 Automated Alert Output
+
+The detection script automatically logs the user creation event.
+
+![](image/VirtualBox_Security2_#12.png)
+
 ## 🧠 Skills Demonstrated
 - Detection engineering  
 - IR automation  
